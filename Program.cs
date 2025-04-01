@@ -1,3 +1,6 @@
+using HospitalsWeb.cs.Models.Context;
+using Microsoft.EntityFrameworkCore;
+
 namespace HospitalsWeb.cs
 {
     public class Program
@@ -6,8 +9,15 @@ namespace HospitalsWeb.cs
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+            // Add services to the container. 
+
+
+
+            builder.Services.AddDbContext<MyContext>(option => 
+            option.UseSqlServer(builder.Configuration.GetConnectionString("MyContext")));
+
+
+            builder.Services.AddControllersWithViews(); 
 
             var app = builder.Build();
 
