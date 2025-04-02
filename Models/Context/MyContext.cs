@@ -19,9 +19,7 @@ namespace HospitalsWeb.cs.Models.Context
         public DbSet<Doctor> Doctors { get; set; }
         #endregion
 
-        #region Entidades de Registros Médicos
-        public DbSet<MedicalRecord> MedicalRecords { get; set; }
-        #endregion
+
 
         #region Entidades de Pacientes
         public DbSet<Patient> Patients { get; set; }

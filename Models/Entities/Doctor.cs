@@ -1,13 +1,28 @@
-﻿namespace HospitalsWeb.cs.Models.Entities
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace HospitalsWeb.cs.Models.Entities
 {
     public class Doctor
     {
-        public int DoctorId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Specialization { get; set; }
 
-        // Relación con el departamento
-        public int DepartmentId { get; set; }
+        [Key]
+        public int DoctorId { get; set; }
+        [Required]      
+        public int HospitalId { get; set; }
+        [Required]
+        [StringLength(100)]
+        public string Nombre { get; set; }
+
+        [Required]  
+        [StringLength(100)] 
+        public string Especialidad { get; set; }
+
+        [Required,StringLength(100)]    
+        public string Telefono { get; set; }  
+
+        [Required]
+        [StringLength(100)]
+        public string Email { get; set; }
+
     }
 }
